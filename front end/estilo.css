@@ -1,11 +1,12 @@
-.divMenuTopo {
-    background-color: green;
-    height: 60px;
-    width: 100%;
+.div_01{
+    background-color:rebeccapurple;
+    height: 500;
+    width: 300;
 }
-
-.divConteudo{
-    background-color: bisque;
-    width: 80%;
-    height: 400px;
+.div_02{
+    background-attachment: fixed;
+    bottom: 32;
+    background-color: azure;
+    height: 222;
+    width: 500;
 }

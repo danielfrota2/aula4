@@ -1,0 +1,24 @@
+Matricula <input id="numeroMatricula" type="text">
+<input type="button" onclick="consultaMatricula();" value="Busca aluno">
+<h1 id="idconvite"></h1>
+<p id="idmatricula"></p>
+´
+<script>
+function consultaMatricula()
+{
+    let numeroMatriculaPesq = document.getElementById("numeroMatricula").value;
+ fetch('https://mockapi.io/clone/692595d882b59600d7244063' + '/' + numeroMatriculaPesq)
+  .then(response => response.json())  
+  .then(data => {
+    document.getElementById("idconvite").innerText = data.convite;
+    document.getElementById("idmatricula").innerText = data.matricula;
+    
+    console.log(data);
+  })
+  .catch(error => {
+     
+    console.error('Erro ao consumir a API:', error);
+  });
+}        
+
+</script>

@@ -1,0 +1,36 @@
+Nome <input type="text" id="campoNome"> <br><br>
+Matricula <input type="text" id="campoMatricula"> <br><br>
+<input type="button" onclick="CadastrarUsuario();" value="Cadastrar">
+
+<script>
+    function CadastrarUsuario(){
+        let nome = document.getElementById("campoNome").value;
+        let matricula = document.getElementById("campoMatricula").value;
+
+ fetch('https://mockapi.io/clone/692595d882b59600d7244063/Usuarios', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(
+             {
+                Nome: nome,
+                Matricula: matricula
+              })
+        })
+        .then(response => {
+            if (!response.ok) throw new Error('Falha no endpoint');
+            return response.json();
+        })
+        .then(data => {
+            console.log('Payload de retorno:', data);
+        })
+        .catch(err => {
+            console.error('Erro de operação:', err);
+        }
+    );         
+
+
+
+    }
+</script>

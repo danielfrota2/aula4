@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            width: 400px;
+            margin: 0 auto;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+      
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        
+
+        input[type="button"] {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Calculadora</h1>
+
+    <label>Número 1:</label>
+    <input type="number" id="inputNumero1">
+
+    <label>Número 2:</label>
+    <input type="number" id="inputNumero2">
+
+    <label>Resultado:</label>
+    <input type="text" id="resultado" readonly>
+
+    <div class="buttons">
+        <input type="button" onclick="atribuirValor();" value="Atribuir Valor">
+        <input type="button" onclick="pegaValor();" value="Pegar Valor">
+        <input type="button" onclick="soma();" value="Soma">
+        <input type="button" onclick="subtração();" value="Subtração">
+        <input type="button" onclick="multiplicação();" value="Multiplicação">
+        <input type="button" onclick="divisão();" value="Divisão">
+    </div>
+</div>
+
+<script>  
+function atribuirValor(){
+    document.getElementById("resultado").value = "Resultado: 10";
+}
+function pegaValor(){
+    let n1 = document.getElementById("inputNumero1").value;
+    alert("Valor de n1: " + n1);
+}
+function soma(){
+    let n1 = parseFloat(document.getElementById("inputNumero1").value);
+    let n2 = parseFloat(document.getElementById("inputNumero2").value);
+    let res = n1 + n2;
+    document.getElementById("resultado").value = res;
+}
+function subtração(){
+    let n1 = parseFloat(document.getElementById("inputNumero1").value);
+    let n2 = parseFloat(document.getElementById("inputNumero2").value);
+    let res = n1 - n2;
+    document.getElementById("resultado").value = res;
+}
+function divisão(){
+    let n1 = parseFloat(document.getElementById("inputNumero1").value);
+    let n2 = parseFloat(document.getElementById("inputNumero2").value);
+    let res = n1 / n2;
+    document.getElementById("resultado").value = res;
+}
+function multiplicação(){
+    let n1 = parseFloat(document.getElementById("inputNumero1").value);
+    let n2 = parseFloat(document.getElementById("inputNumero2").value);
+    let res = n1 * n2;
+    document.getElementById("resultado").value = res;
+}
+</script>
+
+</body>
+</html>
